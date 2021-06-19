@@ -67,8 +67,8 @@ async def async_setup_platform(hass, configs, async_add_entities, config=None):
     uid = config.get('uid')
 
     remote = Wfirex4Remote(name, host, uid,
-        Store(hass, CODE_STORAGE_VERSION, f"rs_wfirex4_codes"),
-        Store(hass, FLAG_STORAGE_VERSION, f"rs_wfirex4_{uid}_flags"),
+        Store(hass, CODE_STORAGE_VERSION, f"rs_wfirex3_codes"),
+        Store(hass, FLAG_STORAGE_VERSION, f"rs_wfirex3_{uid}_flags"),
     )
 
     async_add_entities([remote])
@@ -76,7 +76,7 @@ async def async_setup_platform(hass, configs, async_add_entities, config=None):
     loaded = await remote.async_load_storage_files()
 
 
-class Wfirex4Remote(RemoteEntity):
+class Wfirex3Remote(RemoteEntity):
     """Representation of a RS-WFIREX4 remote."""
 
     def __init__(self, name, host, uid, code, flag):
