@@ -1,5 +1,5 @@
 {
-  "name": "RS-WFIREX4",
+  "name": "RS-WFIREX3",
   "content_in_root": false,
   "domains": ["sensor", "remote"],
   "iot_class": "Local Push"
