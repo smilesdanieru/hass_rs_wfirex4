@@ -8,8 +8,8 @@ import homeassistant.helpers.config_validation as cv
 from homeassistant.helpers import discovery
 from homeassistant.const import CONF_HOST, CONF_NAME, CONF_SCAN_INTERVAL
 
-DOMAIN = 'rs_wfirex4'
-DEFAULT_NAME = 'RS-WFIREX4'
+DOMAIN = 'rs_wfirex3'
+DEFAULT_NAME = 'RS-WFIREX3'
 DEFAULT_SCAN_INTERVAL = 60
 PLATFORMS = ['remote', 'sensor']
 CONF_TEMP_OFFSET = 'temp_offset'
