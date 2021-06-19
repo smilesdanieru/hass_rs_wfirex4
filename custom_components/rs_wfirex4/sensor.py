@@ -51,13 +51,13 @@ async def async_setup_platform(hass, configs, async_add_entities, config=None):
 
     entities = []
     for sensor_type in SENSOR_TYPES.keys():
-        entities.append(Wfirex4SensorEntity(name, sensor_type, uid))
+        entities.append(Wfirex3SensorEntity(name, sensor_type, uid))
 
     async_add_entities(entities)
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     # Class of Data fetcher
-    fetcher = Wfirex4Fetcher(hass, host, entities, config)
+    fetcher = Wfirex3Fetcher(hass, host, entities, config)
 
     # Call first task and start loop
     await fetcher.fetching_data()
@@ -77,7 +77,7 @@ class Wfirex4SensorEntity(Entity):
 
     @property
     def unique_id(self):
-        return 'wfirex4_{}_{}'.format(self._uid, self.type)
+        return 'wfirex3_{}_{}'.format(self._uid, self.type)
 
     @property
     def state(self):
@@ -103,7 +103,7 @@ class Wfirex4SensorEntity(Entity):
 
 # ------------------------------------------------------------------------------
 # Fetcher Class
-class Wfirex4Fetcher:
+class Wfirex3Fetcher:
     def __init__(self, hass, host, entities, config):
         self.data = {}
         self.hass = hass
